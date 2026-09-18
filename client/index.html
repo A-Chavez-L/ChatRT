@@ -40,12 +40,12 @@
         })
 
         document.addEventListener('click', () => {
-                    input.focus();
-                });
+            input.focus();
+        });
 
-                if (document.activeElement !== input) {
-                    input.focus();
-                }
+        if (document.activeElement !== input) {
+            input.focus();
+        }
 
         form.addEventListener('submit', (e) => {
             e.preventDefault()
@@ -53,7 +53,7 @@
             if (input.value) {
                 socket.emit('chat message', input.value)
                 input.value = ''
-                
+
             }
         })
     </script>
@@ -92,7 +92,7 @@
 
         #messages>li {
             color: rgb(19, 229, 19);
-             background: black;
+            background: black;
             padding-bottom: 30px;
         }
 
@@ -113,6 +113,7 @@
             padding: 0px;
             position: absolute;
             right: 0;
+            caret-color: rgb(19, 229, 19);
         }
 
         #input {
@@ -122,6 +123,7 @@
             margin: 4px;
             padding: 0px;
             background: black;
+            color: rgb(19, 229, 19);
         }
 
         #input:focus {
@@ -146,8 +148,7 @@
     <section id="chat">
         <ul id="messages"></ul>
         <form id="form">
-            <input type="text" name="mensaje" id="input" 
-                autocomplete="off" />
+            <input type="text" name="mensaje" id="input" autocomplete="off" />
             <button type="submit"></button>
         </form>
     </section>
